@@ -1,1 +1,1 @@
-My follow along from the course spring-cloud-fundamentals on Udemy
+My follow along from the course spring-cloud-fundamentals on Udemy..
