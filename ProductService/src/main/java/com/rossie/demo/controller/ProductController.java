@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.rossie.demo.model.Coupon;
 import com.rossie.demo.model.Product;
 import com.rossie.demo.repository.ProductRepo;
+import com.rossie.demo.restclients.CouponClient;
 
 
 @RestController
