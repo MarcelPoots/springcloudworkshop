@@ -1,6 +1,8 @@
 package com.rossie.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,6 +15,7 @@ import com.rossie.demo.restclients.CouponClient;
 
 
 @RestController
+@RefreshScope
 @RequestMapping("/productapi")
 public class ProductController {
 
@@ -22,6 +25,9 @@ public class ProductController {
 	@Autowired
 	private ProductRepo repo;
 
+	@Value("${my.custom.property}")
+	private String prop;
+	
 	//@HystrixCommand(fallbackMethod = "sendErrorResponse")
 	@RequestMapping(value = "/products", method = RequestMethod.POST)
 	public Product create(@RequestBody Product product) {
@@ -31,6 +37,12 @@ public class ProductController {
 
 	}
 
+	@RequestMapping(value = "/prop", method = RequestMethod.GET)
+	public String showProperty() {
+		return prop;
+
+	}
+	
 	public Product sendErrorResponse(Product product) {
 		return product;
 
