@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 
 @SpringBootTest
-class CoupondataApplicationTests {
+class CouponServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
