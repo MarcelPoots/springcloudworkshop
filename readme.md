@@ -17,3 +17,20 @@ code varchar(20),
 discount decimal(8,3),
 exp_date varchar(100) 
 );
+
+Note you must have a local git repo holding a 
+
+product-service.properties
+and
+product-service-dev.properties
+
+with values like:
+
+spring.datasource.url=jdbc:mysql://localhost:3306/mydb
+spring.datasource.username=root
+spring.datasource.password=root
+
+server.port=9091
+
+spring.application.name=product-service
+eureka.instance.prefer-ip-address=true

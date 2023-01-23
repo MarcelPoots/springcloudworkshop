@@ -40,7 +40,6 @@ public class ProductController {
 	@RequestMapping(value = "/prop", method = RequestMethod.GET)
 	public String showProperty() {
 		return prop;
-
 	}
 	
 	public Product sendErrorResponse(Product product) {
